@@ -16,15 +16,5 @@ namespace PortfolioU10787
         {
             InitializeComponent();
         }
-
-        private void button1_Click_1(object sender, EventArgs e)
-        {
-            uint[] ints = new uint[2];
-            ints[0] = 2;
-            ints[1] = 20;
-            //ints[2] = 20;
-            MathSolving ms = new MathSolving();
-            ms.CalculateGCD(ints, true);
-        }
     }
 }

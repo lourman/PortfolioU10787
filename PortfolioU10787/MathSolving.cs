@@ -10,6 +10,21 @@ namespace PortfolioU10787
     public class MathSolving
     {
         #region Private Methods
+
+        /// <summary>
+        /// Checks if an array has any element that is zeor
+        /// </summary>
+        /// <param name="pintegers"></param>
+        /// <returns>True if no zero was found, False if at least one element is zero </returns>
+        private bool ArrayHasNoZeros(uint[] pintegers)
+        {
+            for (int i = 0; i < pintegers.Length; i++)
+            {
+                if (pintegers[i] == 0) return false;
+            }
+            return true;
+        }
+
         /// <summary>
         /// Use the Euclidean Algorithm to calculate the GCD of two positive integers.
         /// </summary>
@@ -50,12 +65,12 @@ namespace PortfolioU10787
             while (i < afac.Count() && j < bfac.Count())
             {
                 // increment i or j by 1 depending on which is larger
-                if (afac[i] < bfac[j]) 
+                if (afac[i] < bfac[j])
                     i++;
-                else if (afac[i] > bfac[j]) 
+                else if (afac[i] > bfac[j])
                     j++;
                 else
-                { 
+                {
                     // if afac[i] == bfac[j], i.e., Common factors
                     GCD *= afac[i];
                     i++;
@@ -91,7 +106,7 @@ namespace PortfolioU10787
                 }
                 i++;
             }
-            
+
             return factors;
         }
         #endregion
@@ -102,31 +117,70 @@ namespace PortfolioU10787
         /// </summary>
         /// <param name="pintegers">The array of all integers for which to calculate the GCD.</param>
         /// <param name="PrimeFactorisation">True if using prime factorisation method, False if using Euclidean algorith,</param>
-        /// <returns>GCD of all all poisitve integers.</returns>
+        /// <returns>GCD of all all poisitve integers. Zero if at least one element of the integer array is zero</returns>
         public uint CalculateGCD(uint[] pintegers, bool PrimeFactorisation)
         {
-            uint result = pintegers[0];
-            for (int i = 1; i < pintegers.Length; i++)
+            uint result = 0;
+            if (ArrayHasNoZeros(pintegers))
             {
-                result = PrimeFactorisation ? PrimeFactorisationGCDCalculation(result, pintegers[i]) : EuclidianGCDCalculation(result, pintegers[i]);
-                if (result == 1)
+                result = pintegers[0];
+                for (int i = 1; i < pintegers.Length; i++)
                 {
-                    return 1;
+                    result = PrimeFactorisation ? PrimeFactorisationGCDCalculation(result, pintegers[i]) : EuclidianGCDCalculation(result, pintegers[i]);
+                    if (result == 1)
+                    {
+                        return 1;
+                    }
                 }
             }
-
             return result;
         }
 
         /// <summary>
-        /// 
+        /// Calculates the Least Common Multiple of multiple positive integers
         /// </summary>
         /// <param name="arr"></param>
-        /// <param name="n"></param>
-        /// <returns></returns>
-        public int GetLCM(int[] arr)
+        /// <returns>LCM of all all poisitve integers. Zero if at least one element of the integer array is zero</returns>
+        public uint CalculateLCM(uint[] arr)
         {
-            return 0;
+            throw new NotImplementedException();
+        }
+
+        /// <summary>
+        /// Solves the quadratic equation. It returns real and imaginary roots.
+        /// </summary>
+        /// <param name="a">The coefficient of the x squared term</param>
+        /// <param name="b">The coefficient of the x squared term</param>
+        /// <param name="c">The constant term</param>
+        /// <param name="root1">Returns a one element array with the element being the first root
+        ///                     Returns a two element array with the first element being the real part and the second
+        ///                     the imaginary part of the first root</param>
+        /// <param name="root1">Returns a one element array with the element being the root
+        ///                     Returns a two element array with the first element being the real part and the second
+        ///                     the imaginary part of the second root</param>
+        /// <returns> True if equation has real solutions, False if not
+        /// </returns>
+        /// <exception cref="NotImplementedException"></exception>
+        public bool CalculateQuadraticEquation(double a, double b, double c, out double root1_Real, out double root2_Imag)
+        {
+            throw new NotImplementedException();
+        }
+
+        public double SolveLinearEquation(double a, int b)
+        {
+            throw new NotImplementedException();
+        }
+
+        public double determinantOfMatrix(int[,] matrix)
+        {
+            throw new NotImplementedException();
+        }
+
+        // This function finds the solution of system of
+        // linear equations using cramer's rule
+        public void SolveLinearSystem(int[,] coefficients)
+        {
+            throw new NotImplementedException();
         }
     }
 }
