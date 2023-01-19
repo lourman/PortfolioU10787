@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(IMSolver));
             this.tabControlMathSolver = new System.Windows.Forms.TabControl();
             this.tabPage1 = new System.Windows.Forms.TabPage();
             this.tabPage2 = new System.Windows.Forms.TabPage();
@@ -42,7 +43,7 @@
             this.tabControlMathSolver.Location = new System.Drawing.Point(0, 0);
             this.tabControlMathSolver.Name = "tabControlMathSolver";
             this.tabControlMathSolver.SelectedIndex = 0;
-            this.tabControlMathSolver.Size = new System.Drawing.Size(411, 345);
+            this.tabControlMathSolver.Size = new System.Drawing.Size(650, 345);
             this.tabControlMathSolver.TabIndex = 0;
             // 
             // tabPage1
@@ -50,7 +51,7 @@
             this.tabPage1.Location = new System.Drawing.Point(4, 22);
             this.tabPage1.Name = "tabPage1";
             this.tabPage1.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage1.Size = new System.Drawing.Size(403, 319);
+            this.tabPage1.Size = new System.Drawing.Size(642, 319);
             this.tabPage1.TabIndex = 0;
             this.tabPage1.Text = "GCD";
             this.tabPage1.UseVisualStyleBackColor = true;
@@ -69,10 +70,11 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(411, 345);
+            this.ClientSize = new System.Drawing.Size(650, 345);
             this.Controls.Add(this.tabControlMathSolver);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "IMSolver";
-            this.Text = "Form1";
+            this.Text = "Interactive Math Solver";
             this.tabControlMathSolver.ResumeLayout(false);
             this.ResumeLayout(false);
 

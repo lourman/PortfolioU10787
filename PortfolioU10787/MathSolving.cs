@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Security.Cryptography;
 using System.Text;
 using System.Text.RegularExpressions;
 using System.Threading.Tasks;
@@ -110,6 +111,8 @@ namespace PortfolioU10787
             return factors;
         }
         #endregion
+
+        #region Public Methods
         // Function to find gcd of array of 
         // numbers 
         /// <summary>
@@ -147,40 +150,64 @@ namespace PortfolioU10787
         }
 
         /// <summary>
+        /// Solves a simple linear equation.
+        /// </summary>
+        /// <param name="a">The coefficient of the x term</param>
+        /// <param name="b">The constant term</param>
+        /// <returns>True if there is a valid solution. False if there is no solution</returns>
+        /// <exception cref="NotImplementedException"></exception>
+        public bool SolveLinearEquation(double a, double b, out double result )
+        {
+            throw new NotImplementedException();
+        }
+
+        /// <summary>
         /// Solves the quadratic equation. It returns real and imaginary roots.
         /// </summary>
         /// <param name="a">The coefficient of the x squared term</param>
-        /// <param name="b">The coefficient of the x squared term</param>
+        /// <param name="b">The coefficient of the x term</param>
         /// <param name="c">The constant term</param>
-        /// <param name="root1">Returns a one element array with the element being the first root
-        ///                     Returns a two element array with the first element being the real part and the second
-        ///                     the imaginary part of the first root</param>
-        /// <param name="root1">Returns a one element array with the element being the root
-        ///                     Returns a two element array with the first element being the real part and the second
-        ///                     the imaginary part of the second root</param>
-        /// <returns> True if equation has real solutions, False if not
-        /// </returns>
+        /// <param name="root1_Real">If the quadratic has real root then it returns the first root.
+        ///                     If the quadratic has imaginary roots it returns the real part of the roots.</param>
+        /// <param name="root2_Imag">If the quadratic has real root then it returns the second root.
+        ///                     If the quadratic has imaginary roots it returns the absolute value of the imaginary part of the roots.</param>
+        /// <returns> True if equation has real solutions, False if it has imaginary roots</returns>
         /// <exception cref="NotImplementedException"></exception>
         public bool CalculateQuadraticEquation(double a, double b, double c, out double root1_Real, out double root2_Imag)
         {
             throw new NotImplementedException();
-        }
+        }        
 
-        public double SolveLinearEquation(double a, int b)
+        /// <summary>
+        /// Calculates the determinant of a matrix. The matrix size can only be 2x2, 3x3 and 4x4.
+        /// </summary>
+        /// <param name="matrix">The table of numbers. Only integers</param>
+        /// <returns>The Determinant of the matrix</returns>
+        /// <exception cref="NotImplementedException"></exception>
+        public double DeterminantOfMatrix(int[,] matrix)
         {
             throw new NotImplementedException();
         }
 
-        public double determinantOfMatrix(int[,] matrix)
+        /// <summary>
+        /// Calculates the solution of the system of linear equations using 
+        /// Cramer's Rule.
+        /// </summary>
+        /// <param name="coefficients">The array of the cooefficients for example:
+        /// For the foillowing equations:
+        /// 2x+3y=0
+        /// 23x-4y=3
+        /// the array should be:
+        /// {2,3,0}
+        /// {23,-4,3}
+        /// </param>
+        /// <param name="solutions">An array of doubles equal to the values of each solution. The length of array depends on the linear system size. </param>
+        /// <returns>If the system has a solution it returns to true. If the system has no solution it returns false</returns>
+        /// <exception cref="NotImplementedException"></exception>
+        public bool SolveLinearSystem(int[,] coefficients, out double[] solutions)
         {
             throw new NotImplementedException();
         }
-
-        // This function finds the solution of system of
-        // linear equations using cramer's rule
-        public void SolveLinearSystem(int[,] coefficients)
-        {
-            throw new NotImplementedException();
-        }
+        #endregion
     }
 }
