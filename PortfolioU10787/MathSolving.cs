@@ -158,7 +158,7 @@ namespace PortfolioU10787
         /// <exception cref="NotImplementedException"></exception>
         public bool SolveLinearEquation(double a, double b, out double result )
         {
-            throw new NotImplementedException();
+            return false;
         }
 
         /// <summary>
